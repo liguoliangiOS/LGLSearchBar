@@ -35,6 +35,9 @@ typedef NS_ENUM(NSInteger, LGLTextBorderStyle) {
 /** 提示文字 */
 @property (nonatomic, copy)   NSString * placeholder;
 
+/** 搜索的内容 */
+@property (nonatomic, copy) NSString * searchText;
+
 /** 提示文字的颜色 */
 @property (nonatomic, strong) UIColor  * placeholderColor;
 

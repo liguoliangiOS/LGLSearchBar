@@ -14,16 +14,9 @@
     UISearchBar * _searchBar;
 }
 
-
 @end
 
 @implementation LGLSearchBar
-
-/*
-     还需要添加 修改放大镜的图片
- 
- 
- */
 
 - (instancetype)initWithFrame:(CGRect)frame  searchBarStyle:(LGLSearchBarStyle)style {
     self = [super initWithFrame:frame];
@@ -131,6 +124,11 @@
     _textBordStyle = textBordStyle;
     UITextBorderStyle bordStyle = (textBordStyle == LGLTextBorderStyleNone) ? UITextBorderStyleNone : ((textBordStyle == LGLTextBorderStyleLine) ? UITextBorderStyleLine : ((textBordStyle == LGLTextBorderStyleBezel) ? UITextBorderStyleBezel : UITextBorderStyleRoundedRect));
     [self searchBarTextFeild].borderStyle = bordStyle;
+}
+
+- (void)setSearchText:(NSString *)searchText {
+    _searchText = searchText;
+    _searchBar.text = searchText;
 }
 
 - (void)setSearchBarBordeWidth:(CGFloat)Width bordColor:(UIColor *)bordColor bordRadius:(CGFloat)bordcornerRadius {
