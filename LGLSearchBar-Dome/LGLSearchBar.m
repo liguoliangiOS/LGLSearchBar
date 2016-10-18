@@ -48,14 +48,18 @@
 
 // called when keyboard search button pressed
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    self.block(searchBar.text);
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@" "]) {
+        self.block(searchBar.text);
+    }
     searchBar.text = nil;
     [searchBar resignFirstResponder];
 }
 
  // called when cancel button pressed
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    self.block(searchBar.text);
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@" "]) {
+        self.block(searchBar.text);
+    }
     searchBar.text = nil;
     [searchBar resignFirstResponder];
 }
